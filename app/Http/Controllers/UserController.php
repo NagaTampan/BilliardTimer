@@ -35,7 +35,7 @@ public function store(Request $request)
         User::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
-            'password' => bcypt($validated['password']),
+            'password' => $validated['password'],
         ]);
 
         return redirect()->route('users.index')->with('status', 'User created successfully!');
